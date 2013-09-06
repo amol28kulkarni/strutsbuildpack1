@@ -18,6 +18,9 @@ module LanguagePack
         dispatcherServletClass: "org.springframework.web.servlet.DispatcherServlet"
     }.freeze
 
+	FILTER_PARAMS = {
+		filterClass : "org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter"
+	}.freeze
     def self.use?
       spring_files_found = (Dir.glob("WEB-INF/classes/org/springframework").any? ||
           Dir.glob("WEB-INF/lib/spring-core*.jar").any? || Dir.glob("WEB-INF/lib/org.springframework.core*.jar").any?)
